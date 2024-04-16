@@ -1,12 +1,26 @@
 * {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
     font-family: sans-serif;
 }
 
 html {
     scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 5px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.25);
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background: linear-gradient(to top, #c72092, #6c14d0);
 }
 
 section {
@@ -22,6 +36,8 @@ section nav {
     align-items: center;
     justify-content: space-around;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+    background: #fff;
+    position: fixed;
     top: 0px;
     left: 0px;
     right: 0px;
@@ -30,7 +46,7 @@ section nav {
 
 section nav .logo {
     font-size: 35px;
-    columns: #c72092;
+    color: #c72092;
     margin: 5px 0px;
     cursor: pointer;
     position: relative;
@@ -81,10 +97,9 @@ section .main .main_content {
 section .main .main_content .main_text h1 {
     font-size: 90px;
     line-height: 70px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: pyxidium quick;
     background: linear-gradient(to right, #c72092, #6c14d0);
-    background-clip: text;
-    /* -webkit-background-clip: text; */
+    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     position: relative;
     top: 45px;
@@ -94,7 +109,6 @@ section .main .main_content .main_text h1 {
 section .main .main_content .main_text h1 span {
     font-size: 70px;
     background: linear-gradient(to right, #c72092, #6c14d0);
-    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -176,7 +190,6 @@ section .main .button:hover i {
     justify-content: center;
     text-transform: uppercase;
     background: linear-gradient(to right, #c72092, #6c14d0);
-    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -190,12 +203,13 @@ section .main .button:hover i {
 }
 
 .products .box .card {
-    width: 250px;
+    width: 290px;
     height: 440px;
-    box-shadow: 0px 0px 8px #6c14d0;
-    padding: 10px 20px;
+    box-shadow: 0 0 8px #6c14d0;
+    border-radius: 5px;
     text-align: center;
-    background-color: #f6f6f6;
+    padding: 10px 20px;
+    background: #f6f6f6;
 }
 
 .products .box .card .small_card {
@@ -209,7 +223,7 @@ section .main .button:hover i {
 }
 
 .products .box .card:hover .small_card {
-    transform: translate(2px);
+    transform: translateX(2px);
     cursor: pointer;
     opacity: 1;
 }
@@ -274,7 +288,7 @@ section .main .button:hover i {
 }
 
 
-/* ABOUT */
+/* ABOUT SECTION */
 .about {
     width: 100%;
     height: 100vh;
@@ -356,11 +370,12 @@ section .main .button:hover i {
     margin-top: 45px;
 }
 
-.about .about_main .about_text {
+.about .about_main .about_text p {
     background: linear-gradient(to left, #c72092, #6c14d0);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     line-height: 22px;
+    width: 600px;
     text-align: justify;
     padding: 25px 30px;
     border: 2px solid #c72092;
@@ -423,4 +438,114 @@ section .main .button:hover i {
     margin: 0px auto;
 }
 
-.review .profile_image img {}
+.review .profile .profile_image {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 5px 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.review .profile .profile_image:hover {
+    transform: scale(1.2);
+}
+
+.review .profile_image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.review .profile {
+    display: flex;
+    align-items: center;
+}
+
+.review .review_box .review_card {
+    width: 500px;
+    background: #f3f1f1;
+    padding: 20px 25px;
+    border-radius: 5px;
+    margin: 15px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+.review .review_box .review_card .card_top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.review .review_box .review_card .card_top .profile .name {
+    margin-left: 20px;
+    line-height: 22px;
+}
+
+.review .review_box .review_card .card_top .profile .name strong {
+    font-size: 20px;
+}
+
+.review .review_box .review_card .card_top .profile .name .like i {
+    color: #ffa500;
+    display: inline-block;
+    font-size: 12px;
+}
+
+.review .review_box .review_card .comment p {
+    text-align: justify;
+    line-height: 22px;
+    margin-top: 15px;
+}
+
+
+/* SERVICES SECTION */
+.services {
+    width: 70%;
+    margin: 0px auto;
+    text-align: center;
+    padding: 80px 0px 10px 0px;
+}
+
+.services h1 {
+    font-size: 60px;
+    text-transform: uppercase;
+}
+
+.services h1 span {
+    margin-left: 15px;
+    background: linear-gradient(to left, #c72092, #6c14d0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.services .services_cards {
+    width: 80%;
+    margin: 0px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    top: 50px;
+}
+
+.services .services_box i {
+    font-size: 60px;
+    color: #ffa500;
+    margin: 20px 0px;
+    cursor: pointer;
+}
+
+.services .services_box h3 {
+    margin-bottom: 12px;
+    font-size: 19px;
+}
+
+.services .services_box p {
+    text-align: center;
+    color: #919191;
+    margin-bottom: 60px;
+}
